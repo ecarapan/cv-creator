@@ -1,0 +1,14 @@
+.app {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.app form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
