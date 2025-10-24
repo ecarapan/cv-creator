@@ -1,0 +1,12 @@
+.resume {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.editBtn {
+  margin: 0 20px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}

@@ -51,6 +51,7 @@ export default function App() {
           general={general}
           education={education}
           experience={experience}
+          setShowResume={setShowResume}
         ></Resume>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -60,7 +61,9 @@ export default function App() {
             values={experience}
             onChange={handleExperienceChange}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" className={styles.submitBtn}>
+            Submit
+          </button>
         </form>
       )}
     </div>
