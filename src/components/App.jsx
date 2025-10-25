@@ -6,7 +6,6 @@ import ExperienceForm from "./ExperienceForm";
 import Resume from "./Resume";
 
 export default function App() {
-  const [showResume, setShowResume] = useState(false);
   const [general, setGeneral] = useState({
     name: "",
     phone: "",
@@ -38,34 +37,26 @@ export default function App() {
     setExperience({ ...experience, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setShowResume(true);
-  }
-
   return (
     <div className={styles.app}>
       <h1>CV Creator</h1>
-      {showResume ? (
-        <Resume
-          general={general}
-          education={education}
-          experience={experience}
-          setShowResume={setShowResume}
-        ></Resume>
-      ) : (
-        <form onSubmit={handleSubmit}>
+      <main>
+        <form>
           <GeneralForm values={general} onChange={handleGeneralChange} />
           <EducationForm values={education} onChange={handleEducationChange} />
           <ExperienceForm
             values={experience}
             onChange={handleExperienceChange}
           />
-          <button type="submit" className={styles.submitBtn}>
-            Submit
-          </button>
         </form>
-      )}
+        <section>
+          <Resume
+            general={general}
+            education={education}
+            experience={experience}
+          ></Resume>
+        </section>
+      </main>
     </div>
   );
 }

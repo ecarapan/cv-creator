@@ -1,38 +1,44 @@
 import styles from "../styles/Resume.module.css";
 
-export default function Resume({
-  general,
-  education,
-  experience,
-  setShowResume,
-}) {
+export default function Resume({ general, education, experience }) {
   return (
     <div className={styles.resume}>
-      <div>
-        <h2>Personal Info</h2>
-        <p>Name: {general.name}</p>
-        <p>Phone: {general.phone}</p>
-        <p>Email: {general.email}</p>
+      <div div className={styles.general}>
+        <h1>{general.name}</h1>
+        <div>
+          <p>{general.phone}</p>
+          <p>{general.email}</p>
+        </div>
+        <hr />
       </div>
-      <div>
-        {" "}
+      <div className={styles.education}>
         <h2>Education</h2>
-        <p>School: {education.school}</p>
-        <p>Degree: {education.degree}</p>
-        <p>Start: {education.start}</p>
-        <p>Graduation: {education.graduation}</p>
+        <hr />
+        <div>
+          <div className={styles.info}>
+            <p>{education.school}</p>
+            <p>{education.degree}</p>
+          </div>
+          <div className={styles.dates}>
+            <p>Start: {education.start}</p>
+            <p>Graduation: {education.graduation}</p>
+          </div>
+        </div>
       </div>
-      <div>
+      <div div className={styles.experience}>
         <h2>Experience</h2>
-        <p>Company: {experience.company}</p>
-        <p>Position: {experience.position}</p>
-        <p>Responsibilities: {experience.responsibilities}</p>
-        <p>Start: {experience.start}</p>
-        <p>End: {experience.end}</p>
+        <hr />
+        <div>
+          <div className={styles.info}>
+            <p>{experience.company}</p>
+            <p>{experience.responsibilities}</p>
+          </div>
+          <div className={styles.dates}>
+            <p>Start: {experience.start}</p>
+            <p>End: {experience.end}</p>
+          </div>
+        </div>
       </div>
-      <button onClick={() => setShowResume(false)} className={styles.editBtn}>
-        Edit
-      </button>
     </div>
   );
 }
