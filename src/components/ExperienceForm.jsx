@@ -5,7 +5,7 @@ export default function GeneralForm({ values, onChange }) {
     <div className={styles.form}>
       <h2>Experience</h2>
       <div>
-        <label htmlFor="company">Company Name:</label>
+        <label htmlFor="company">Company:</label>
         <input
           type="text"
           name="company"

@@ -1,6 +1,12 @@
 import styles from "../styles/Resume.module.css";
 
 export default function Resume({ general, education, experience }) {
+  function formatDate(dateStr) {
+    const date = new Date(dateStr);
+    if (isNaN(date)) return dateStr;
+    return date.toLocaleString("default", { month: "long", year: "numeric" });
+  }
+
   return (
     <div className={styles.resume}>
       <div div className={styles.general}>
@@ -19,10 +25,9 @@ export default function Resume({ general, education, experience }) {
             <p>{education.school}</p>
             <p>{education.degree}</p>
           </div>
-          <div className={styles.dates}>
-            <p>Start: {education.start}</p>
-            <p>Graduation: {education.graduation}</p>
-          </div>
+          <p>
+            {formatDate(education.start)} - {formatDate(education.graduation)}
+          </p>
         </div>
       </div>
       <div div className={styles.experience}>
@@ -31,12 +36,12 @@ export default function Resume({ general, education, experience }) {
         <div>
           <div className={styles.info}>
             <p>{experience.company}</p>
+            <p>{experience.position}</p>
             <p>{experience.responsibilities}</p>
           </div>
-          <div className={styles.dates}>
-            <p>Start: {experience.start}</p>
-            <p>End: {experience.end}</p>
-          </div>
+          <p>
+            {formatDate(experience.start)} - {formatDate(experience.end)}
+          </p>
         </div>
       </div>
     </div>

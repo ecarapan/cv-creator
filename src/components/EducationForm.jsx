@@ -5,7 +5,7 @@ export default function GeneralForm({ values, onChange }) {
     <div className={styles.form}>
       <h2>Education</h2>
       <div>
-        <label htmlFor="school">School Name:</label>
+        <label htmlFor="school">School:</label>
         <input
           type="text"
           name="school"
