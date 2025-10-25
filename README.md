@@ -4,7 +4,7 @@ Resume builder.
 
 ## Live Demo
 
-[https://playful-horse-babc8b.netlify.app/](https://playful-horse-babc8b.netlify.app/)
+[https://ecarapan-cv-creator.netlify.app/](https://ecarapan-cv-creator.netlify.app/)
 
 ## Technologies
 
